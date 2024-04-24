@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  appnode:
+    container_name: appnode
+    build: .
+    env_file:
+      - ./.env
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=$PORT
+    depends_on:
+      - bd_mysql
+  
+  bd_mysql:
+    image: mysql
+    container_name: bd_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+    ports:
+      - "3306:3306"
+

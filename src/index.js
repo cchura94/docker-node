@@ -20,7 +20,7 @@ const PUERTO = process.env.PORT || 3000
 // conectando CON BD
 // Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize(process.env.BD_DATABASE, process.env.BD_USER, process.env.BD_PASSWORD, {
-    host: 'localhost',
+    host: 'bd_mysql',
     dialect: 'mysql'
 });
 
@@ -63,5 +63,5 @@ const User = sequelize.define(
 
 
 app.listen(PUERTO, () => {
-    console.log("Servidor iniciado de NODE http://localhost:"+PUERTO);
+    console.log("Servidor iniciado de NODE PRUEBA http://localhost:"+PUERTO);
 })
